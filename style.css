@@ -1,0 +1,629 @@
+:root{
+  --blue:#0759d4;
+  --blue-dark:#0644a0;
+  --black:#090b0f;
+  --text:#11151c;
+  --muted:#69717d;
+  --line:#dfe3e8;
+  --light:#f5f7fa;
+  --white:#fff;
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--text);background:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit}
+.container{width:min(var(--max),calc(100% - 72px));margin:auto}
+
+.header{position:fixed;top:0;left:0;width:100%;z-index:50;background:transparent;border-bottom:0;color:#fff;pointer-events:none}
+.header-inner{height:78px;padding:0 36px;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+.logo-link{position:fixed;top:22px;left:36px;display:flex;align-items:center;min-width:0;height:auto;z-index:70;pointer-events:auto}
+.logo{width:auto;max-width:205px;max-height:72px;object-fit:contain}
+.logo-placeholder{display:none;font-size:10px;letter-spacing:1.5px;color:#888}
+.nav{display:flex;gap:32px;font-size:14px;font-weight:600;pointer-events:auto}
+.nav a:hover{color:var(--blue)}
+.header-contact{background:var(--blue);color:#fff;padding:11px 17px;font-size:13px;font-weight:700;pointer-events:auto}
+.header-contact:hover{background:var(--blue-dark)}
+.menu-btn{display:none;background:none;border:0}
+.menu-btn span{display:block;width:26px;height:2px;background:#111;margin:6px}
+
+.hero{height:100vh;min-height:650px;position:sticky;top:0;overflow:hidden;background:#111;color:#fff;display:flex;align-items:center;z-index:0}
+.hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.36) 55%,rgba(0,0,0,.2) 100%)}
+.hero-content{position:relative;z-index:2;width:min(1000px,calc(100% - 72px));margin:auto;padding-top:90px}
+.hero-brand{height:65px;margin-bottom:35px}
+.hero-brand img{max-height:65px;max-width:200px;object-fit:contain}
+.hero-kicker{font-size:11px;letter-spacing:2px;font-weight:700;margin-bottom:22px;color:#dce8ff}
+.hero h1{font-family:Manrope,sans-serif;font-size:clamp(58px,7.8vw,108px);line-height:.94;letter-spacing:-4px;max-width:800px}
+.hero-text{font-size:18px;max-width:510px;color:#e2e6ed;margin-top:28px}
+.hero-button{display:inline-flex;gap:30px;align-items:center;background:var(--blue);color:#fff;padding:14px 19px;margin-top:35px;font-size:14px;font-weight:700}
+.hero-button:hover{background:var(--blue-dark)}
+.hero-bottom{position:absolute;z-index:2;bottom:28px;left:36px;right:36px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:1.7px;color:#d9dce1}
+
+.section{padding:120px 0}
+.two-col{display:grid;grid-template-columns:1fr 2fr;gap:90px}
+.label{font-size:11px;font-weight:800;letter-spacing:1.8px;color:var(--blue)}
+.about{background:var(--light);position:relative;z-index:2;margin-top:-18vh;padding-top:calc(120px + 18vh)}
+.about-copy h2{font-family:Manrope,sans-serif;font-size:clamp(38px,5vw,66px);line-height:1.03;letter-spacing:-2.8px;max-width:900px}
+.about-copy p{font-size:18px;color:var(--muted);max-width:760px;margin-top:30px}
+
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:60px}
+.section-heading h2{font-family:Manrope,sans-serif;font-size:clamp(44px,5.5vw,76px);line-height:.98;letter-spacing:-3px;margin-top:15px}
+.section-heading>p{max-width:390px;color:var(--muted);font-size:16px;padding-bottom:6px}
+
+.services-list{border-top:1px solid var(--text)}
+.service{display:grid;grid-template-columns:60px 1.1fr 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line);align-items:center}
+.service>span{font-size:12px;color:#9299a3}
+.service h3{font-family:Manrope;font-size:27px;letter-spacing:-1px}
+.service p{font-size:14px;color:var(--muted)}
+.service:hover{background:#fafbfc;padding-left:12px;padding-right:12px;transition:.2s}
+
+.work{background:#0d1118;color:#fff;position:relative;z-index:2}
+.work .label{color:#75aaff}
+.work-heading>p{color:#aeb7c5}
+.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 22px}
+.work-card{min-width:0;cursor:pointer}
+.work-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#202631}
+.work-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+.work-card:hover .work-thumb img{transform:scale(1.035)}
+.play{position:absolute;left:22px;bottom:22px;width:54px;height:54px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font-size:16px;box-shadow:0 5px 20px rgba(0,0,0,.25)}
+.work-info{display:flex;justify-content:space-between;gap:20px;padding:14px 0 5px}
+.work-info h3{font-family:Manrope;font-size:18px}
+.work-info span{font-size:12px;color:#aeb7c5}
+.work-error{display:none;position:absolute;inset:0;align-items:center;justify-content:center;background:#252b34;color:#d8dee8;text-align:center;padding:20px;font-size:13px}
+
+.partners{background:#fff;position:relative;z-index:2}
+.partner-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.partner{min-height:165px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:30px;background:#fff}
+.partner img{max-width:190px;max-height:75px;width:auto;height:auto;object-fit:contain}
+.partner span{display:none;font-size:11px;color:#9aa1aa;text-align:center}
+.partner.missing{background:#fafbfc}
+.partner.missing span{display:block}
+.logos-note{font-size:11px;color:#969da7;margin-top:16px}
+
+.contact{background:var(--blue);color:#fff;position:relative;z-index:2}
+.contact .label{color:#d5e4ff}
+.contact-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:90px}
+.contact h2{font-family:Manrope;font-size:clamp(50px,6.5vw,88px);line-height:.95;letter-spacing:-4px;margin:18px 0 25px}
+.contact p{font-size:17px;color:#dce8ff;max-width:540px}
+.contact-details{padding-top:45px}
+.contact-details>a{display:block;font-family:Manrope;font-size:25px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.3)}
+.contact-details>a:hover{padding-left:8px}
+.contact-details>span{display:block;margin-top:22px;color:#dce8ff}
+.socials{display:flex;gap:24px;margin-top:48px}
+.socials a{font-size:13px;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:3px}
+
+.footer{background:#0644a0;color:#dbe8ff;padding:23px 0;font-size:11px}
+.footer-inner{display:flex;justify-content:space-between}
+
+.video-modal{display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center}
+.video-modal.open{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.9)}
+.modal-content{position:relative;width:min(1100px,calc(100% - 36px));z-index:2}
+.modal-video{aspect-ratio:16/9;background:#000}
+.modal-video iframe{width:100%;height:100%;border:0}
+.modal-close{position:absolute;right:0;top:-50px;width:40px;height:40px;border:0;border-radius:50%;background:#fff;color:#111;font-size:27px;cursor:pointer}
+.youtube-fallback{display:block;color:#fff;text-align:right;font-size:12px;margin-top:12px}
+
+@media(max-width:900px){
+  .header-inner{padding:0 20px}
+  .nav,.header-contact{display:none}
+  .menu-btn{display:block}
+  .container{width:min(var(--max),calc(100% - 40px))}
+  .hero-content{width:min(100% - 40px,1000px)}
+  .two-col,.contact-wrap{grid-template-columns:1fr;gap:40px}
+  .about-layout{grid-template-columns:180px minmax(0,1fr);gap:35px}
+  .section-heading{align-items:flex-start;flex-direction:column;gap:18px}
+  .service{grid-template-columns:40px 1fr;gap:15px}
+  .service p{grid-column:2}
+  .partner-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-details{padding-top:0}
+}
+@media(max-width:600px){
+  .hero{min-height:650px}
+  .hero h1{font-size:54px;letter-spacing:-2.5px}
+  .hero-text{font-size:16px}
+  .hero-bottom{left:20px;right:20px}
+  .hero-bottom span:last-child{display:none}
+  .section{padding:85px 0}
+  .about{margin-top:-10vh;padding-top:calc(85px + 10vh)}
+  .work-grid{grid-template-columns:1fr}
+  .partner{min-height:125px;padding:18px}
+  .partner img{max-width:135px;max-height:58px}
+  .contact-details>a{font-size:20px}
+}
+
+/* About: logo original da empresa ao lado esquerdo do texto */
+.about-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:90px;align-items:start}
+.about-brand{display:flex;align-items:flex-start;justify-content:flex-start;padding-top:8px;min-height:110px}
+.about-logo{width:min(250px,100%);height:auto;max-height:120px;object-fit:contain;object-position:left center}
+.about-copy .label{margin-bottom:18px}
+
+/* Serviços com mais presença e leitura natural */
+.services{background:#fff;position:relative;z-index:2}
+.services-list{margin-top:10px}
+.service{min-height:105px}
+.service h3{font-size:29px}
+.service p{max-width:470px;line-height:1.55}
+
+/* Localização */
+.location{background:#eef2f6;position:relative;z-index:2;padding-bottom:120px;display:block}
+.location-grid{display:grid;grid-template-columns:.8fr 1.5fr;gap:70px;align-items:stretch}
+.location-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.location-copy h2{font-family:Manrope,sans-serif;font-size:clamp(50px,6vw,82px);line-height:.92;letter-spacing:-4px;margin:18px 0 25px}
+.location-copy h2 span{color:var(--blue)}
+.location-copy p{font-size:17px;color:var(--muted);line-height:1.65}
+.map-link{display:inline-block;margin-top:28px;color:var(--blue);font-weight:700;font-size:14px;border-bottom:1px solid var(--blue);padding-bottom:4px}
+.map-frame{min-height:450px;background:#dce2e9;overflow:hidden}
+.map-frame iframe{width:100%;height:100%;min-height:450px;border:0;display:block;filter:grayscale(.12)}
+
+@media(max-width:900px){
+  .about-layout{grid-template-columns:1fr;gap:28px}
+  .about-brand{min-height:0}
+  .about-logo{max-width:190px;max-height:85px}
+  .location-grid{grid-template-columns:1fr;gap:40px}
+  .map-frame,.map-frame iframe{min-height:360px}
+}
+
+/* Ajuste final — camadas do vídeo + Sobre Nós compacto + Serviços translúcidos */
+.about{background:#fff;position:relative;z-index:2;margin-top:-10vh;padding-top:95px;padding-bottom:95px}
+.about-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:70px;align-items:start}
+.about-brand{display:flex;align-items:flex-start;justify-content:flex-start;padding-top:5px;min-height:0}
+.about-logo{width:min(190px,100%);max-height:90px;height:auto;object-fit:contain;object-position:left center}
+.about-copy .label{margin-bottom:14px}
+.about-copy h2{font-size:clamp(34px,4.15vw,54px);line-height:1.02;letter-spacing:-2.2px;max-width:820px}
+.about-copy p{font-size:16px;max-width:680px;margin-top:22px;line-height:1.6}
+
+/* O vídeo da primeira secção continua fixo por trás das camadas seguintes. */
+.hero{position:sticky;top:0;z-index:0}
+
+/* Serviços: vidro/transparência para o vídeo voltar a aparecer por trás. */
+.services{background:rgba(255,255,255,.72);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);position:relative;z-index:2}
+.services .section-heading,
+.services .services-list{position:relative;z-index:1}
+
+@media(max-width:900px){
+  .about{margin-top:-6vh;padding-top:70px;padding-bottom:70px}
+  .about-layout{grid-template-columns:150px minmax(0,1fr);gap:30px}
+  .about-logo{max-width:145px;max-height:70px}
+}
+@media(max-width:600px){
+  .about{margin-top:-5vh;padding-top:65px;padding-bottom:65px}
+  .about-layout{grid-template-columns:1fr;gap:22px}
+  .about-logo{max-width:150px;max-height:70px}
+  .about-copy h2{font-size:34px}
+}
+
+
+/* V7 — única alteração solicitada: topo transparente e logo em destaque ao lado do texto do vídeo. */
+.header{background:transparent;border-bottom:0;color:#fff}
+.header .logo{filter:none}
+.header .nav a{color:#fff}
+.header .nav a:hover{color:#dce8ff}
+.header .header-contact{background:var(--blue);color:#fff}
+.hero-content{padding-top:78px}
+.hero-main-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:55px;align-items:center}
+.hero-brand{height:auto;margin:0;display:flex;align-items:center;justify-content:flex-start}
+.hero-brand img{width:auto;max-width:235px;max-height:115px;object-fit:contain}
+.hero-copy{min-width:0}
+
+@media(max-width:900px){
+  .header{background:transparent}
+  .hero-main-layout{grid-template-columns:150px minmax(0,1fr);gap:28px}
+  .hero-brand img{max-width:145px;max-height:80px}
+}
+@media(max-width:600px){
+  .hero-main-layout{grid-template-columns:1fr;gap:22px}
+  .hero-brand img{max-width:155px;max-height:75px}
+  .hero-content{padding-top:95px}
+}
+
+
+/* Projeto Final In Out — logo único flutuante + título com efeito de cor */
+.header .logo{filter:drop-shadow(0 3px 12px rgba(0,0,0,.28));}
+.hero-main-layout{display:block;}
+.hero-copy{max-width:900px;}
+.hero h1{background:linear-gradient(115deg,#ffffff 0%,#ffffff 42%,#8fc4ff 68%,#2e78ff 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:inoutTitleColors 7s ease-in-out infinite alternate;filter:drop-shadow(0 4px 18px rgba(0,0,0,.18));}
+@keyframes inoutTitleColors{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+@media(max-width:900px){.logo-link{top:18px;left:20px}.logo{max-width:175px;max-height:62px}.hero-copy{max-width:100%;}}
+@media(max-width:600px){.logo-link{top:16px;left:20px}.logo{max-width:155px;max-height:55px}.hero h1{background-size:180% auto;}}
+
+
+/* FINAL 2 — apenas correções solicitadas */
+.about{background:#fff;}
+.about-layout{display:block;}
+
+/* O único logo é o do topo, flutuante e ligeiramente maior. */
+.header .logo{width:auto;max-width:205px;max-height:72px;filter:drop-shadow(0 3px 12px rgba(0,0,0,.28));}
+.logo-link{position:fixed;top:22px;left:36px;z-index:70;}
+
+/* Efeito de cor mais vivo e dinâmico no título, sem mudar a posição do texto. */
+.hero h1{
+  background:linear-gradient(115deg,#fff 0%,#fff 25%,#b9d9ff 45%,#2f80ff 62%,#fff 78%,#8fc4ff 100%);
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:inoutTitleColors 5s ease-in-out infinite alternate;
+  filter:drop-shadow(0 4px 18px rgba(0,0,0,.18));
+}
+@keyframes inoutTitleColors{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Google Maps volta ao comportamento original do V7. */
+.map-frame{min-height:450px;background:#dce2e9;overflow:hidden;}
+.map-frame iframe{width:100%;height:100%;min-height:450px;border:0;display:block;filter:grayscale(.12);}
+
+@media(max-width:900px){
+  .logo-link{top:18px;left:20px;}
+  .logo{max-width:175px;max-height:62px;}
+}
+@media(max-width:600px){
+  .logo-link{top:16px;left:20px;}
+  .logo{max-width:155px;max-height:55px;}
+  .hero h1{background-size:220% 220%;}
+}
+
+/* FINAL 3 — apenas ajustes pedidos: título centralizado, efeito mais lento e logo flutuante visível. */
+.hero-content{
+  text-align:center;
+}
+.hero-copy{
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero-kicker{
+  text-align:center;
+}
+.hero h1{
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero-text{
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero-button{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Movimento de cor ligeiramente mais lento e suave. */
+.hero h1{
+  animation-duration:8s;
+}
+
+/* Único logo: flutuante no canto superior esquerdo, com mais presença. */
+.logo-link{
+  position:fixed;
+  top:20px;
+  left:36px;
+  z-index:70;
+}
+.header .logo{
+  width:auto;
+  max-width:225px;
+  max-height:80px;
+}
+
+@media(max-width:900px){
+  .logo-link{top:18px;left:20px;}
+  .header .logo{max-width:185px;max-height:66px;}
+}
+@media(max-width:600px){
+  .logo-link{top:16px;left:20px;}
+  .header .logo{max-width:165px;max-height:60px;}
+}
+
+/* FINAL 4 — centralização das secções, sem alterar a estrutura existente */
+.about-copy{
+  text-align:center;
+}
+.about-copy h2,
+.about-copy p{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.section-heading{
+  display:block;
+  text-align:center;
+}
+.section-heading>div{
+  width:100%;
+}
+.section-heading h2{
+  margin-left:auto;
+  margin-right:auto;
+}
+.section-heading>p{
+  margin:24px auto 0;
+  padding-bottom:0;
+}
+
+.service{
+  text-align:center;
+}
+.service h3,
+.service p{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.work-heading>p{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.partners .section-heading{
+  text-align:center;
+}
+
+.location-copy{
+  align-items:center;
+  text-align:center;
+}
+.location-copy p{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.contact-wrap{
+  text-align:center;
+}
+.contact-wrap>div:first-child p{
+  margin-left:auto;
+  margin-right:auto;
+}
+.contact-details{
+  padding-top:45px;
+}
+.socials{
+  justify-content:center;
+}
+
+@media(max-width:900px){
+  .section-heading>p{margin-top:18px;}
+  .contact-details{padding-top:0;}
+}
+
+/* FINAL 5 — menu centralizado e botão Fale connosco à direita */
+.header-inner{
+  position:relative;
+}
+.nav{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:0;
+  height:78px;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+}
+.header-contact{
+  margin-left:auto;
+  position:relative;
+  z-index:2;
+}
+@media(max-width:900px){
+  .nav{position:static;transform:none;height:auto;}
+}
+
+
+/* Ajuste final — único logo centralizado na primeira página. */
+.header .nav{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+}
+.header-contact{
+  margin-left:auto;
+}
+.hero-content{
+  text-align:center;
+}
+.hero-main-layout{
+  display:block;
+}
+.hero-copy{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.hero-brand{
+  height:auto;
+  margin:0 0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-brand img{
+  width:auto;
+  max-width:260px;
+  max-height:125px;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 18px rgba(0,0,0,.3));
+}
+.hero-kicker{
+  text-align:center;
+}
+.hero h1{
+  text-align:center;
+}
+.hero-text{
+  text-align:center;
+}
+.hero-button{
+  align-self:center;
+}
+@media(max-width:900px){
+  .header .nav{
+    left:50%;
+    transform:translateX(-50%);
+    gap:20px;
+    font-size:13px;
+  }
+  .hero-brand img{max-width:210px;max-height:95px;}
+}
+@media(max-width:600px){
+  .header .nav{display:none;}
+  .hero-brand{margin-bottom:18px;}
+  .hero-brand img{max-width:175px;max-height:78px;}
+}
+
+/* FINAL — logo novamente fixo no canto esquerdo; conteúdo da primeira página centralizado sem ocupar espaço do logo. */
+.hero-brand{
+  position:fixed;
+  top:20px;
+  left:36px;
+  z-index:80;
+  width:auto;
+  height:auto;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  pointer-events:none;
+}
+.hero-brand img{
+  display:block;
+  width:auto;
+  max-width:225px;
+  max-height:80px;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 18px rgba(0,0,0,.35));
+}
+.hero-content{
+  width:min(1120px,calc(100% - 72px));
+  padding-top:70px;
+  padding-bottom:55px;
+  text-align:center;
+}
+.hero-copy{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.hero-kicker{
+  margin-bottom:18px;
+  text-align:center;
+}
+.hero h1{
+  max-width:1000px;
+  font-size:clamp(56px,7.2vw,100px);
+  line-height:.93;
+  letter-spacing:-4px;
+  text-align:center;
+}
+.hero-text{
+  max-width:720px;
+  margin:25px auto 0;
+  text-align:center;
+  font-size:18px;
+}
+.hero-button{
+  margin:30px auto 0;
+}
+
+/* Serviços permanece transparente. */
+.services{
+  background:rgba(255,255,255,.72) !important;
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+}
+
+@media(max-width:900px){
+  .hero-brand{top:18px;left:20px;}
+  .hero-brand img{max-width:185px;max-height:66px;}
+  .hero-content{width:min(100% - 40px,1000px);padding-top:70px;padding-bottom:45px;}
+  .hero h1{font-size:clamp(50px,9vw,82px);letter-spacing:-3px;}
+  .hero-text{font-size:17px;max-width:650px;}
+}
+
+@media(max-width:600px){
+  .hero-brand{top:16px;left:18px;}
+  .hero-brand img{max-width:155px;max-height:55px;}
+  .hero-content{width:calc(100% - 32px);padding-top:55px;padding-bottom:35px;}
+  .hero-kicker{font-size:10px;letter-spacing:1.7px;margin-bottom:16px;}
+  .hero h1{font-size:clamp(45px,13.5vw,66px);line-height:.94;letter-spacing:-2.5px;}
+  .hero-text{font-size:15px;line-height:1.45;margin-top:20px;max-width:520px;}
+  .hero-button{margin-top:23px;}
+}
+
+/* AJUSTE SOLICITADO — logo centralizado, sobretudo no mobile, sem sobrepor o conteúdo. */
+.hero-brand{
+  position:static;
+  top:auto;
+  left:auto;
+  z-index:auto;
+  width:100%;
+  height:auto;
+  margin:0 0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+.hero-brand img{
+  display:block;
+  width:auto;
+  max-width:260px;
+  max-height:125px;
+  object-fit:contain;
+}
+
+@media(max-width:900px){
+  .hero-content{
+    padding-top:82px;
+    padding-bottom:52px;
+  }
+  .hero-brand{
+    margin-bottom:22px;
+  }
+  .hero-brand img{
+    max-width:205px;
+    max-height:92px;
+  }
+}
+
+@media(max-width:600px){
+  .hero-content{
+    width:calc(100% - 32px);
+    padding-top:88px;
+    padding-bottom:45px;
+  }
+  .hero-brand{
+    margin-bottom:20px;
+  }
+  .hero-brand img{
+    max-width:180px;
+    max-height:78px;
+  }
+  .hero h1{
+    max-width:100%;
+  }
+  .hero-text{
+    max-width:500px;
+  }
+}
+
+/* Serviços — o destaque branco acontece automaticamente enquanto a pessoa desliza. */
+.service{
+  transition:background-color .35s ease;
+}
+.service.auto-active{
+  background:#fff;
+}
